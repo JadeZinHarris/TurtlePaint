@@ -1,7 +1,14 @@
 import java.awt.*;
+import java.util.Scanner;
 
 public class MainApp
+
 {
+    HomeScreen ui = new HomeScreen();
+    public void display(){
+    displayMenu();
+
+}
     public static void main(String[] args)
     {
         // This starter code to get you familiar with how
@@ -33,5 +40,37 @@ public class MainApp
 
         turtle.penDown();
         turtle.forward(hypotenuse);
+
+
+        
     }
+    public void displayMenu() {
+        Scanner scanner = new Scanner(System.in);
+        boolean running = true;
+        while (running) {
+            System.out.println(" Choose an option:");
+            System.out.println("1 .) Add Shape");
+            System.out.println("2 .) Save Shape ");
+            System.out.println("0 .) Exit");
+
+            System.out.print("You Chose: ");
+            String input = scanner.nextLine().trim();
+
+
+            switch (input) {
+                case "1":
+                    addAShape();
+                    break;
+                case "2":
+                    saveAllShapes();
+                    break;
+                case "0":
+                    running = false;
+                    break;
+            }
+
+        }
+
+    }
+
 }
